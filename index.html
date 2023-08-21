@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Akinator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/app.css" />
+
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Akinator</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Game Options
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Restart game</a></li>
+                  <li><a class="dropdown-item" href="#">Clear localStorage</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+    </header>
+
+    <main>
+      <div class="text-center">
+        <img src="./img/speech-bubble.png" class="w-25 img-fluid rounded" alt="...">
+      </div>
+      <section class="game-start">
+        <!-- h1 'Akinator' with cool font text and animation -->
+        <h1 class="game-title p-4 ">Akinator</h1>
+        <!-- small text h2 -->
+        <h2 class="game-subtitle p-4">Think of a character and I'll guess it!</h2>
+        <button class="btn btn-outline-secondary btn-start">I'm Ready!</button>
+      </section>
+
+      <section class="quest" style="display: none">
+        <h2 class="p-3"></h2>
+        <button class="btn btn-outline-success btn-yes">Yes</button>
+        <button class="btn btn-outline-danger btn-no">No</button>
+      </section>
+
+      <section class="new-quest" style="display: none">
+        <h2 class="p-3">OK, I gave up...</h2>
+
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <form class="ending-form">
+              <input name="newGuess" type="text" class="form-control" id="newGuess" placeholder="You thought of:" aria-label="You thought of">
+            </div>
+            <div class="col">
+              <input name="newQuest" type="text" class="form-control" id="newQuest" placeholder="Question to differentiate:" aria-label="Question to differentiate">
+            </div>
+            <div class="container">
+              <button type="submit" class="btn btn-dark btn-add-guess mt-4">Make me Smarter!</button>  
+            </div>
+            </form>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- get inside contiainer in the middle of the scrren -->
+      <div class="container">
+        <div class="modal" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Yeah!</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>Awesome!</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary close-btn" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    </main>
+
+    <footer class="py-3 my-4">
+      <ul class="nav justify-content-center border-bottom pb-3 mb-3"></ul>
+      <p class="text-center text-muted mt-5">© All rights reserved to <a href="CodingAcademy.co.il" target="_blank">CodingAcademy.co.il</a></p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="js/storage.service.js"></script>
+    <script src="lib/jquery/jquery.js"></script>
+    <script src="js/quest.service.js"></script>
+    <script src="js/quest.controller.js"></script>
+  </body>
+</html>
